@@ -1,0 +1,9 @@
+{
+  "triggers": [
+    {
+      "name": "requestMigrationTrigger",
+      "type": "timer",
+      "config": "* 5 7-22 * * * *"
+    }
+  ]
+}

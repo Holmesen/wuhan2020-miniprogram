@@ -1,0 +1,53 @@
+/* miniprogram/pages/home/home.wxss */
+.title{
+  display:flex;flex-flow:row;justify-content: space-between;padding:7px;border-left:solid 2px #70e8af;
+}
+.sub-title{
+  text-align: center;font-size: 0.8rem;line-height: 1rem;color: #a9a9a9; margin: 5px auto 3px auto;
+}
+.total-views{
+  height: auto; padding: 5px 3%; display: flex; flex-flow: row; flex-wrap: wrap; align-content: center;
+}
+.total-view{
+  width: calc(45% - 20px); height: auto; margin: 7px; display: flex; flex-flow: row; align-content: center; padding:10px; box-shadow:0 0 2px 1px #ccc; border-radius:5px;
+}
+.total-img{
+  height: 30px; width: 30px; margin: auto 7px; align-content: center;
+}
+.total-img>image{
+  height: 100%; width: 100%; margin: auto;
+}
+.total-num{
+  height: 30px; width: auto; display: flex; flex-flow: column; align-content: center;
+}
+.total-num-t{
+  font-size: 0.7rem; line-height:0.7rem; margin: auto;
+}
+.total-num-n{
+  font-size: 0.9rem; line-height: 0.9rem; margin: auto; font-weight:bold; color: #70e8af;
+}
+
+.area-hv{
+  width: 90%; height: 20px; display: flex; flex-flow: row; margin: 7px auto 0px auto;
+}
+.area-hv>view{
+  width: calc(25% - 1px); height: 100%; text-align: center; border-left: solid 1px white; font-size:0.8rem; font-weight:bold; background-color:#70e8af; line-height:20px; color:white;
+}
+.area-vs{
+  width: 90%; height: auto; display: flex; flex-flow: column; margin: 0 auto;
+}
+.area-v{
+  width: 100%; height: auto; display: flex; flex-flow: row; margin: 0px auto; padding: 0px auto; 
+}
+.area-v>view{
+  width: 25%; height: 27px; text-align: center; font-size:0.8rem; font-weight:bold; line-height:27px; margin: auto;
+}
+city-vs{
+  width: 100%; height: auto; display: flex; flex-flow: column; margin: 0 auto;
+}
+.city-v{
+  width: 100%; height: auto; display: flex; flex-flow: row; margin: 0px auto; padding: 0px auto; border-top:dashed 1px #dfdfdf;
+}
+.city-v>view{
+  width: 25%; height: 20px; text-align: center; font-size:0.7rem; line-height:20px; margin: auto;
+}

@@ -1,0 +1,16 @@
+/* miniprogram/pages/news/news.wxss */
+.title{
+  display:flex;flex-flow:row;justify-content: space-between;padding:7px;border-left:solid 2px #70e8af;
+}
+.yq-news-vs{
+  width: 100%; height: auto; display: flex; flex-flow: column; align-content: center;
+}
+.yq-news-v{
+  width: 90%; height: auto; display: flex; flex-flow: column; align-content: center; margin: 10px auto; padding: 5px 3%; box-shadow: 0 0 4px 1px #ccc; border-radius: 5px;
+}
+.yq-news-v>rich-text{
+  width: 100%; height: auto; text-align: left; font-size: 0.8rem; line-height: 1rem; margin: 10px auto; color: #555;
+}
+.yq-news-v>view{
+  width: 100%; height: auto; display: flex; flex-flow: row; justify-content: space-between; font-size: 0.7rem; line-height: 1rem; align-content: center; margin-bottom: 10px;
+}

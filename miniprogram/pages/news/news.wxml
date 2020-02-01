@@ -1,0 +1,20 @@
+<!--miniprogram/pages/news/news.wxml-->
+<view class='title' style=''>
+  <text style='font-size: 0.9rem;line-height: 1rem; margin-left:0px;font-weight:bold;'>疫情新闻</text>
+  <text style='font-size:0.7rem;line-height:1rem;margin-right:0px;margin-left:auto;color:#cbcbcb;'>更新时间：{{news[0].sendTime || ''}}</text>
+</view>
+<view class="yq-news-vs" wx:if='news.length>0'>
+  <view class="yq-news-v" wx:for='{{news}}' wx:key='index'>
+    <rich-text nodes='{{item.content}}'></rich-text>
+    <view>
+      <view style="margin-left:0px;font-weight: bold;">来源：{{item.fromName||''}}</view>
+      <view style="margin-right:0px;color: #aaa;">{{item.sendTime||''}}</view>
+    </view>
+  </view>
+</view>
+<view wx:if='{{news.length===0}}' style="font-size:0.8rem;font-line:1.5rem;color:#999;text-align:center;margin:20px auto;">暂无有关疫情的新闻</view>
+
+<!-- <view class='title' style=''>
+  <text style='font-size: 0.9rem;line-height: 1rem; margin-left:0px;font-weight:bold;'>网络谣言</text>
+  <text style='font-size:0.7rem;line-height:1rem;margin-right:0px;margin-left:auto;color:#cbcbcb;'>更新时间：{{news[0].sendTime || ''}}</text>
+</view> -->

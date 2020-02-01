@@ -1,0 +1,22 @@
+/* miniprogram/pages/statisticsCity/statisticsCity.wxss */
+.title{
+  display:flex;flex-flow:row;justify-content: space-between;padding:7px;border-left:solid 2px #70e8af;
+}
+.sub-title{
+  text-align: center;font-size: 0.8rem;line-height: 1rem;color: #a9a9a9; margin: 5px auto 3px auto;
+}
+.area-hv{
+  width: 90%; height: 20px; display: flex; flex-flow: row; margin: 7px auto 0px auto;
+}
+.area-hv>view{
+  width: calc(33.33% - 1px); height: 100%; text-align: center; border-left: solid 1px white; font-size:0.8rem; font-weight:bold; background-color:#70e8af; line-height:20px; color:white;
+}
+.area-vs{
+  width: 90%; height: auto; display: flex; flex-flow: column; margin: 0 auto 13px auto;
+}
+.area-v{
+  width: 100%; height: auto; display: flex; flex-flow: row; margin: 0px auto; padding: 0px auto; 
+}
+.area-v>view{
+  width: 33.33%; height: 27px; text-align: center; font-size:0.8rem; font-weight:bold; line-height:27px; margin: auto;
+}

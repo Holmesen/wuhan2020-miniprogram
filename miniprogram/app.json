@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/news/news",
+    "pages/statistics/statistics",
+    "pages/statisticsCity/statisticsCity"
+    
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#70e8af",
+    "navigationBarTitleText": "wuhan2020",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "images/home0.png",
+        "selectedIconPath": "images/home1.png"
+      },
+      {
+        "pagePath": "pages/news/news",
+        "text": "新闻",
+        "iconPath": "images/news0.png",
+        "selectedIconPath": "images/news1.png"
+      },
+      {
+        "pagePath": "pages/statistics/statistics",
+        "text": "迁徙",
+        "iconPath": "images/earth0.png",
+        "selectedIconPath": "images/earth1.png"
+      }
+    ],
+    "color": "#dfdfdf",
+    "selectedColor": "#70e8af",
+    "backgroundColor": "#ffffff"
+  },
+  "sitemapLocation": "sitemap.json"
+}

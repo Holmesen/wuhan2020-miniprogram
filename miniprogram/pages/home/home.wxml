@@ -1,0 +1,136 @@
+<!--miniprogram/pages/home/home.wxml-->
+<view>
+  <view class='title' style=''>
+    <text style='font-size: 0.9rem;line-height: 1rem; margin-left:0px;font-weight:bold;'>国内疫情</text>
+    <text style='font-size:0.7rem;line-height:1rem;margin-right:0px;margin-left:auto;color:#cbcbcb;'>更新时间：{{detail.mapLastUpdatedTime || ''}}</text>
+  </view>
+  <view>
+    <cover-image src='{{detail.mapSrc || "/images/virusMap.png"}}' bindtap='preImage'></cover-image>
+  </view>
+  <view>
+    <view class='sub-title' style=''>------- 国内疫情统计 -------</view>
+    <view class='total-views'>
+      <view class='total-view'>
+        <view class='total-img'><image src='/images/me1.png'></image></view>
+        <view class='total-num'>
+          <text class='total-num-t'>疑似人数</text>
+          <text class='total-num-n'>{{detail.summaryDataIn.unconfirmed || '未知'}}</text>
+        </view>
+      </view>
+      <view class='total-view' style='margin-left:auto;'>
+        <view class='total-img'><image src='/images/me1.png'></image></view>
+        <view class='total-num'>
+          <text class='total-num-t'>确诊人数</text>
+          <text class='total-num-n'>{{detail.summaryDataIn.confirmed || '未知'}}</text>
+        </view>
+      </view>
+      <view class='total-view'>
+        <view class='total-img'><image src='/images/me1.png'></image></view>
+        <view class='total-num'>
+          <text class='total-num-t'>治愈人数</text>
+          <text class='total-num-n'>{{detail.summaryDataIn.cured || '未知'}}</text>
+        </view>
+      </view>
+      <view class='total-view' style='margin-left:auto;'>
+        <view class='total-img'><image src='/images/me1.png'></image></view>
+        <view class='total-num'>
+          <text class='total-num-t'>死亡人数</text>
+          <text class='total-num-n'>{{detail.summaryDataIn.died || '未知'}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view>
+    <view class='sub-title' style=''>------- 各省市疫情 -------</view>
+    <view style='width:100%;display:flex;flex-flow:column;align-content:center;'>
+      <view class='area-hv'>
+        <view class='area-h' style='border-left-color: rgba(255, 255, 255, 0);'>省市</view>
+        <view class='unconfirmed-h'>疑似</view>
+        <view class='confirmed-h'>确诊</view>
+        <view class='crued-h'>治愈</view>
+        <view class='died-h'>死亡</view>
+      </view>
+      <view class='area-vs'>
+        <view style='width:100%;height:auto;border-bottom: solid 1px #70e8af;' wx:for="{{detail.caseList||[]}}" wx:key="index">
+          <view class='area-v' bindtap='expandDetail' data-idx='{{index}}'>
+            <view class='area' data-idx='{{index}}' style='color:#70e8af;font-weight:bold;overflow-x:hidden;text-align:left;'>{{expandIndex===index?'- ':'+ '}}{{item.area}}</view>
+            <view class='unconfirmed' data-idx='{{index}}'>{{item.unconfirmed || ''}}</view>
+            <view class='confirmed' data-idx='{{index}}'>{{item.confirmed || ''}}</view>
+            <view class='crued' data-idx='{{index}}'>{{item.crued || ''}}</view>
+            <view class='died' data-idx='{{index}}'>{{item.died || ''}}</view>
+          </view>
+          <view class='city-vs' hidden='{{index!=expandIndex}}'>
+            <view class='city-v' wx:for="{{item.subList||[]}}" wx:key="index" wx:for-index="idx" wx:for-item="item2">
+              <view class='city' style='overflow-x:hidden;'>  {{item2.city}}</view>
+              <view class='unconfirmed'>{{item2.unconfirmed || ''}}</view>
+              <view class='confirmed'>{{item2.confirmed || ''}}</view>
+              <view class='crued'>{{item2.crued || ''}}</view>
+              <view class='died'>{{item2.died || ''}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='title' style='margin-top:20px;'>
+    <text style='font-size: 0.9rem;line-height: 1rem; margin-left:0px;font-weight:bold;'>国外疫情</text>
+    <text style='font-size:0.7rem;line-height:1rem;margin-right:0px;margin-left:auto;color:#cbcbcb;'>更新时间：{{detail.mapLastUpdatedTime || ''}}</text>
+  </view>
+  <view>
+    <view class='sub-title' style=''>------- 国外疫情统计 -------</view>
+    <view class='total-views'>
+      <view class='total-view'>
+        <view class='total-img'><image src='/images/me1.png'></image></view>
+        <view class='total-num'>
+          <text class='total-num-t'>疑似人数</text>
+          <text class='total-num-n'>{{detail.summaryDataOut.unconfirmed || '未知'}}</text>
+        </view>
+      </view>
+      <view class='total-view' style='margin-left:auto;'>
+        <view class='total-img'><image src='/images/me1.png'></image></view>
+        <view class='total-num'>
+          <text class='total-num-t'>确诊人数</text>
+          <text class='total-num-n'>{{detail.summaryDataOut.confirmed || '未知'}}</text>
+        </view>
+      </view>
+      <view class='total-view'>
+        <view class='total-img'><image src='/images/me1.png'></image></view>
+        <view class='total-num'>
+          <text class='total-num-t'>治愈人数</text>
+          <text class='total-num-n'>{{detail.summaryDataOut.cured || '未知'}}</text>
+        </view>
+      </view>
+      <view class='total-view' style='margin-left:auto;'>
+        <view class='total-img'><image src='/images/me1.png'></image></view>
+        <view class='total-num'>
+          <text class='total-num-t'>死亡人数</text>
+          <text class='total-num-n'>{{detail.summaryDataOut.died || '未知'}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view>
+    <view class='sub-title' style=''>------- 各国疫情 -------</view>
+    <view style='width:100%;display:flex;flex-flow:column;align-content:center;'>
+      <view class='area-hv'>
+        <view class='area-h' style='border-left-color: rgba(255, 255, 255, 0);'>国家</view>
+        <view class='unconfirmed-h'>疑似</view>
+        <view class='confirmed-h'>确诊</view>
+        <view class='crued-h'>治愈</view>
+        <view class='died-h'>死亡</view>
+      </view>
+      <view class='area-vs'>
+        <view style='width:100%;height:auto;border-bottom: solid 1px #70e8af;' wx:for="{{detail.caseOutsideList}}" wx:key="index">
+          <view class='area-v'>
+            <view class='area' style='color:#70e8af;font-weight:bold;overflow-x:hidden;'>{{item.area}}</view>
+            <view class='unconfirmed'>{{item.unconfirmed || ''}}</view>
+            <view class='confirmed'>{{item.confirmed || ''}}</view>
+            <view class='crued'>{{item.crued || ''}}</view>
+            <view class='died'>{{item.died || ''}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

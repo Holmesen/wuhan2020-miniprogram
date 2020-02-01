@@ -1,0 +1,19 @@
+<!--miniprogram/pages/statistics/statistics.wxml-->
+<view class='title' style=''>
+  <text style='font-size: 0.9rem;line-height: 1rem; margin-left:0px;font-weight:bold;'>全国热门迁入城市</text>
+  <text style='font-size:0.7rem;line-height:1rem;margin-right:0px;margin-left:auto;color:#cbcbcb;'>更新时间：{{detail_in.time || ''}}</text>
+</view>
+<view style="width:100%;height:{{screenW * 0.618}}px;margin:10px auto 0px auto;">
+  <canvas canvas-id='canvas1' style='width: 100%;height: 100%;'></canvas>
+</view>
+<navigator class="more" url="/pages/statisticsCity/statisticsCity?type=in" open-type="redirect">查看更多迁入城市>>></navigator>
+<!-- <view class="more" bindtap="morecity" data-type="in">查看更多迁入城市>>></view> -->
+<view class='title' style=''>
+  <text style='font-size: 0.9rem;line-height: 1rem; margin-left:0px;font-weight:bold;'>全国热门迁出城市</text>
+  <text style='font-size:0.7rem;line-height:1rem;margin-right:0px;margin-left:auto;color:#cbcbcb;'>更新时间：{{detail_out.time || ''}}</text>
+</view>
+<view style="width:100%;height:{{screenW * 0.618}}px;margin:10px auto 0px auto;">
+  <canvas canvas-id='canvas2' style='width: 100%;height: 100%;'></canvas>
+</view>
+<navigator class="more" url="/pages/statisticsCity/statisticsCity?type=out" open-type="redirect">查看更多迁出城市>>></navigator>
+<!-- <view class="more" bindtap="morecity" data-type="out">查看更多迁出城市>>></view> -->

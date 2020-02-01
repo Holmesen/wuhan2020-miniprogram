@@ -1,0 +1,9 @@
+{
+  "triggers": [
+    {
+      "name": "requestDetailTrigger",
+      "type": "timer",
+      "config": "* */30 7-23 * * * *"
+    }
+  ]
+}

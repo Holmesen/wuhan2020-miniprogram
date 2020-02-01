@@ -1,0 +1,9 @@
+{
+  "triggers": [
+    {
+      "name": "requestNewsTrigger",
+      "type": "timer",
+      "config": "* */30 7-22 * * * *"
+    }
+  ]
+}
